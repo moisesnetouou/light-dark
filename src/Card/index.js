@@ -1,9 +1,13 @@
 import { Button } from "@chakra-ui/button";
-import { useColorMode } from "@chakra-ui/color-mode";
+import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
 import { Flex, Heading, Text } from "@chakra-ui/layout";
 
 export function Card(){
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const blue = useColorModeValue( "blue.100","blue.600");
+  const lightdark = useColorModeValue( "white","#444444");
+
   return(
     <Flex 
       w="100%" 
@@ -12,7 +16,7 @@ export function Card(){
       justifyContent="center"
     >
       <Flex
-      bg={colorMode === "light" ? "white" : "#444444"}
+      bg={lightdark}
       w={["15rem","35rem"]}
       h={["30rem","20rem"]}
       flexDir="column"
@@ -27,16 +31,16 @@ export function Card(){
       </Text>
 
       <Button 
-        bg="#28B2FF" 
+        bg={blue}
         alignSelf={["center", "flex-start"]}
         w={["12rem","20rem" ]}
         marginTop="10" 
         onClick={toggleColorMode}
         _hover={{
-          background: "#0097ec"
+          background: {blue}
         }}
         _active={{
-          background: "#0097ec"
+          background: {blue}
         }}
       >
         Trocar Tema para: {colorMode === "light" ? "Dark" : "Light"}
