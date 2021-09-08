@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 
 const config = {
   initialColorMode: 'light',
@@ -6,6 +7,14 @@ const config = {
 };
 
 const customTheme = extendTheme({
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: mode("#E5E5E5", "#343434") (props),
+        color: props.colorMode === "light" ? "#444444" : "#DBDBDB",
+      },
+    })
+  },
   config,
   fonts: {
     body: 'Sora, system-ui, sans-serif',
@@ -17,13 +26,13 @@ const customTheme = extendTheme({
     medium: 500,
     bold: 700,
   },
-  styles: {
-    global: {
-      'html, body': {
-        background: 'gray.200',
-      },
-    },
-  },
+  // styles: {
+  //   global: {
+  //     'html, body': {
+  //       background: 'gray.200',
+  //     },
+  //   },
+  // },
   radii: {
     sm: '5px',
     md: '8px',
