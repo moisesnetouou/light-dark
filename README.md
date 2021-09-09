@@ -14,7 +14,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Chakra UI](https://chakra-ui.com/)**
   <br></br>
 
-## ☀️ Ligt Card
+## ☀️ Light Card
 
 <img alt="lightCard" src="./src/assets/lightCard.png">
 
